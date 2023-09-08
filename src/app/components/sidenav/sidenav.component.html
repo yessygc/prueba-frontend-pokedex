@@ -1,1 +1,49 @@
-<p>sidenav works!</p>
+<div class="sidenav">
+    <div class="logo-container">
+        <img src="assets/icons/pokedex.jpg" alt="">
+    </div>
+    <div class="sidenav-nav">
+
+        <div *ngFor="let item of navData" class="sidenav-nav-item">
+            <a class="sidenav-nav-link" [routerLink]="item.routeLink" routerLinkActive="active"
+                [routerLinkActiveOptions]="{exact: false}" (click)="item.icon" matTooltip={{item.label}}
+                [matTooltipPosition]="'right'">
+                <img class="sidenav-link-icon" [class]="item.icon" [src]="item.icon">
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<nav class="navbar-container">
+
+    <a [routerLink]="['/properties']" class="logo">
+        <img src="assets/icons/pokedex.jpg" alt="">
+    </a>
+    <div class="nav-options">
+        <a class="nav-menu-mobile">
+            <img (click)="menu = !menu" src="assets/icons/menu-dark.png" alt="Menu">
+        </a>
+    </div>
+</nav>
+
+
+<nav class="mobile-nav" [ngClass]="{ 'open-menu': menu }">
+    <div class="content">
+        <button class="close" mat-icon-button (click)=" menu = !menu ">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+
+    <div class="options">
+        <div class="img-container">
+            <a href="" class="logo" (click)=" menu = !menu " [routerLink]="['properties']">
+                <img src="assets/icons/pokedex.jpg" alt="Logotipo">
+            </a>
+        </div>
+        <mat-action-list>
+            <button *ngFor="let item of navData" mat-list-item (click)=" menu = !menu "
+                [routerLink]="[item.routeLink]">{{item.label}}</button>
+        </mat-action-list>
+    </div>
+</nav>

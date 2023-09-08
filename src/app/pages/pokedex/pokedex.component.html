@@ -1,0 +1,37 @@
+<section>
+    <app-loader *ngIf="isLoading"></app-loader>
+    <div class="dialog-container" *ngIf="!isLoading">
+        <ngx-typed-js class="type-text-container" 
+        [strings]="['Bienvenido a tu pokedex, espero encuentres toda la información que necesites.', 'Puedes buscar un pokemon en específico y dar click sobre uno para ver más información.']"
+        [typeSpeed]="70" [showCursor]="false" [loop]="true" [backSpeed]="50">
+            <h1 class="typing"></h1>
+        </ngx-typed-js>
+    </div>
+    <div class="search" *ngIf="!isLoading">
+        <mat-form-field class="searcher-input">
+            <input matInput type="text" [(ngModel)]="searchText" placeholder="Buscar por nombre" (input)="updateFilteredItems()" #input />
+            <mat-icon matPrefix>search</mat-icon>
+        </mat-form-field>
+    </div>
+    <div class="pokemons-container"  *ngIf="!isLoading">
+        
+        <div class="pokemon" *ngFor="let pokemon of pokemonsList | paginate: { itemsPerPage: 20, currentPage: p }">
+            <img 
+                [src]="pokemon.sprites.front_default" 
+                alt="{{pokemon.species.name ?? 'sin nombre'}}"
+                (click)="openCard(pokemon)"
+            >
+            <div class="circule"></div>
+            <p>{{pokemon.species.name}}</p>
+        </div>
+        
+    </div>
+
+    <div class="paginator" *ngIf="!isLoading">
+        <pagination-controls (pageChange)="p = $event"
+            previousLabel="Anterior"
+            nextLabel="Siguiente"
+            style="margin-top: 50px;"
+        ></pagination-controls>
+    </div>
+</section>

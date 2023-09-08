@@ -1,1 +1,194 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./assets/presets/containers.scss";
+@import "/src/assets/presets/fonts.scss";
+
+/** Colores **/
+:root {
+    --main-color: #F0F0F0;
+    --secondary-color: #db1c36;
+    --tertiary-color: #7fccc7;
+    --input-background: #E4ECF8;
+    --bgColor: #E63950;
+    /*Colores para acciones*/
+    --red-pastel: #F67A72;
+    --green: #84CE6A;
+    --green-pastel: #84CE6A;
+    --blue: #37A5D2;
+    --yellow: #ffd900e3;
+    --gray: #BFC6CF;
+    --blue-dark: #3762D2;
+    --salmon: #F68A72;
+    --brown: #E19235;
+    --red: #e03c3c;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #FCFCFC;
+}
+
+p,
+a,
+h1,
+h2,
+h3,
+li,
+b,
+strong,
+span,
+button,
+input {
+    font-family: 'Open Sans', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+ul,
+ol {
+    list-style: none;
+    padding: 0;
+}
+
+a,
+button {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button:focus {
+    outline: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+section {
+    margin-left: 80px;
+    padding: 2rem 3vw;
+
+    @media screen and (max-width: 991px) {
+        margin-left: 0;
+    }
+
+}
+
+.mat-dialog-content {
+    max-height: 100% !important;
+}
+
+.mat-tab-header {
+    margin: 1.2em 0;
+}
+
+.modifier-dialog {
+    overflow: auto;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-container-mid {
+    width: 49%;
+}
+
+.form-container-small {
+    width: 24%;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.eye-icon {
+    border-radius: 50%;
+    background-image: url('../src/assets/icons/eye-icon.png');
+    background-size: 20px 20px;
+    background-position: center;
+    background-color: var(--gray);
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 30px;
+    display: block;
+    cursor: pointer;
+}
+
+.tool-icon {
+    border-radius: 50%;
+    background-image: url('../src/assets/icons/tool-icon.png');
+    background-size: 20px 20px;
+    background-position: center;
+    background-color: var(--blue-dark);
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 30px;
+    display: block;
+    cursor: pointer;
+}
+
+.save-icon {
+    background-image: url('../src/assets/icons/save-icon.png');
+    background-size: 25px 25px;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 30px;
+    display: block;
+}
+
+.leave-icon {
+    background-image: url('../src/assets/icons/leave-icon.png');
+    background-size: 24px 24px;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 30px;
+    display: block;
+}
+
+.client-icon{
+    background-image: url('../src/assets/icons/client.png');
+    background-size: 19px 17px;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 40px;
+    width: 39px;
+    margin: auto;
+    display: block;
+}
+
+.searcher-input {
+    mat-icon {
+        position: relative;
+        top: 8px;
+        font-size: 24px !important;
+        color: #8d8d8d;
+    }
+
+    input {
+        margin-left: 10px;
+        font-size: 14px;
+        color: var(--gray-title);
+        font-weight: 600;
+        font-family: 'Open Sans', sans-serif;
+    }
+}
+
+html, body { height: 100%; }
+body { margin: 0; }

@@ -1,0 +1,29 @@
+.header {
+    padding-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+        @media screen and (max-width: 991px) {
+            display: none;
+        }
+    }
+
+    
+    .titles-container{
+        display: flex;
+        flex-direction: column;
+        .title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--title-section);
+    
+            h1 {
+                font-size: 32px;
+                font-weight: bold;
+            }
+        }
+
+    }

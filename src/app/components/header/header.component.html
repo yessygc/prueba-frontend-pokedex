@@ -1,0 +1,16 @@
+<section style="padding-bottom: 0; padding-top: .5rem;">
+    <div class="header">
+        <div class="titles-container">
+            <div class="title">
+                <button *ngIf="(locationBack$ | async) != ''" class="close" mat-icon-button (click)="goBack()">
+                    <mat-icon>arrow_back</mat-icon>
+                </button>
+    
+                <h1>{{titleSection$}}</h1>
+                
+            </div>
+            <p class="subtitle-section">{{subtitleSection$}} </p>
+        </div>
+
+    </div>
+</section>
