@@ -10,6 +10,7 @@
         <div class="card-body">
             <p>Types: <span *ngFor="let type of pokeData.types">{{type.type.name ?? 'Desconocido'}}, </span></p>
             <p>Abilities: <span *ngFor="let ability of pokeData.abilities">{{ability.ability.name ?? 'Desconocido'}}, </span></p>
+            <p>Evolutions: <span *ngFor="let evolution of pokeData.evolution">{{evolution.evolution.name ?? 'Desconocido'}}, </span></p>
             <div class="stats">
                 <span style="background-color: rgb(36, 146, 219);">{{pokeData.stats[0].stat.name ?? 'Desconocido'}}: {{pokeData.stats[0].base_stat ?? 'Desconocido'}}</span>
                 <span style="background-color: rgb(219, 36, 36);">{{pokeData.stats[1].stat.name ?? 'Desconocido'}}: {{pokeData.stats[1].base_stat ?? 'Desconocido'}}</span>

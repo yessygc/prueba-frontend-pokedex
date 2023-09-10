@@ -13,41 +13,45 @@ import { lastValueFrom } from 'rxjs';
 export class PokeDexComponent implements OnInit {
 
   classicMode: boolean = true;
-  public isLoading:boolean = false;
-  public pokemonsList:any = [];
+  public isLoading: boolean = false;
+  public pokemonsList: any = [];
   public p: number = 1;
   public searchText = '';
   public tempPokeList = [...this.pokemonsList];
+
+  onClassicModeChange(): void {
+
+  }
 
   constructor(
     private pokeService: PokemonService,
     private alertService: AlertsService,
     private dialog: MatDialog,
-    ) { }
+  ) { }
 
   async ngOnInit(): Promise<void> {
     await this.getAllPokemons();
   }
 
-  async getAllPokemons(){
+  async getAllPokemons() {
     this.isLoading = true;
-    try{
-      for(let pokeIndex = 1; pokeIndex <= 200; pokeIndex++){
-        let pokemon:any = await this.pokeService.getAllPokemons(pokeIndex);
-        
-        this.pokemonsList.push(pokemon); 
+    try {
+      for (let pokeIndex = 1; pokeIndex <= 200; pokeIndex++) {
+        let pokemon: any = await this.pokeService.getAllPokemons(pokeIndex);
+
+        this.pokemonsList.push(pokemon);
       }
-      this.tempPokeList =  this.pokemonsList;
-    
+      this.tempPokeList = this.pokemonsList;
+
       this.isLoading = false;
-    }catch(e){
+    } catch (e) {
       this.isLoading = false;
-      this.alertService.shootSimpleAlert('error','Ocurrio un error al traer la información')
+      this.alertService.shootSimpleAlert('error', 'Ocurrio un error al traer la información')
     }
-    
+
   }
 
-  async openCard(pokemon:any){
+  async openCard(pokemon: any) {
     const dialogRef = this.dialog.open(PokeCardComponent, {
       width: '90vw',
       height: 'auto',
@@ -74,4 +78,9 @@ export class PokeDexComponent implements OnInit {
       }
     });
   }
+
+  getPrincipalType(list: any[]) {
+    return list.filter(x => x.slot === 1)[0]?.type.name;
+  }
+
 }  
