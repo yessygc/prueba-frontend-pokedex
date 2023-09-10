@@ -63,9 +63,14 @@ export class PokeDexComponent implements OnInit {
   }
 
   updateFilteredItems() {
-    this.pokemonsList = this.tempPokeList.filter((item:any) =>
-      item.name.toLowerCase().includes(this.searchText.toLowerCase())
-    );
+    this.pokemonsList = this.tempPokeList.filter((item: any) => {
+      if (!isNaN(Number(this.searchText))) {
+        // Si searchText es un número, buscar por número.
+        return item.id === Number(this.searchText);
+      } else {
+        // Si no es un número, buscar por nombre.
+        return item.name.toLowerCase().includes(this.searchText.toLowerCase());
+      }
+    });
   }
-
-}
+}  
