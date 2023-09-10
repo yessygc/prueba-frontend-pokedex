@@ -4,7 +4,7 @@ import { PokeDexComponent } from './pages/pokedex/pokedex.component';
 // import { CalculationsComponent } from './pages/calculations/calculations.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'poke-dex', pathMatch: 'full' },
+  { path: '', redirectTo: 'pokedex', pathMatch: 'full' },
   { path: 'pokedex', component: PokeDexComponent, },
   //{ path: 'calculations', component: CalculationsComponent, },
 ];

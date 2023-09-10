@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'pokedex-prueba-frontend';
+
+  isSideNavCollapsed = false;
+  screenWidth = 0;
+
+  onToggleSideNav(data: any): void {
+    this.screenWidth = data.screenWidth;
+    this.isSideNavCollapsed = data.collapsed;
+  }
 }
