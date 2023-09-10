@@ -81,11 +81,33 @@ section{
         background: #ffffff;
         border-radius: 8px;
         align-items: center;
-        width: 70%;
+        width: 80%;
         margin: 0 auto;
         margin-top: 40px;
         mat-form-field {
             width: 97%;
         }
     }
+
+    .pokemon-card {
+        display: flex;
+        flex-direction: column;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 10px;
+      }
+    
+      .pokemon-type {
+        background-color: #fff; /* Color por defecto */
+      }
+    
+      /* Define colores para cada tipo de Pokémon */
+      .pokemon-card[type="grass"] .pokemon-type {
+        background-color: green;
+      }
+    
+      .pokemon-card[type="fire"] .pokemon-type {
+        background-color: red;
+      }    
 }

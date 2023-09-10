@@ -1,43 +1,50 @@
 <section>
     <app-loader *ngIf="isLoading"></app-loader>
     <div class="dialog-container" *ngIf="!isLoading">
-        <ngx-typed-js class="type-text-container" 
-        [strings]="['Bienvenido a tu pokedex, espero encuentres toda la información que necesites.', 'Puedes buscar un pokemon en específico y dar click sobre uno para ver más información.']"
-        [typeSpeed]="70" [showCursor]="false" [loop]="true" [backSpeed]="50">
+        <ngx-typed-js class="type-text-container"
+            [strings]="['Bienvenido a tu pokedex, espero encuentres toda la información que necesites.', 'Puedes buscar un pokemon en específico y dar click sobre uno para ver más información.']"
+            [typeSpeed]="70" [showCursor]="false" [loop]="true" [backSpeed]="50">
             <h1 class="typing"></h1>
         </ngx-typed-js>
     </div>
     <div class="search" *ngIf="!isLoading">
         <mat-form-field class="searcher-input">
-            <input matInput type="text" [(ngModel)]="searchText" placeholder="Buscar por nombre o número" (input)="updateFilteredItems()" #input />
+            <input matInput type="text" [(ngModel)]="searchText" placeholder="Buscar por nombre o número"
+                (input)="updateFilteredItems()" #input />
             <mat-icon matPrefix>search</mat-icon>
         </mat-form-field>
-        <mat-slide-toggle
-        color="primary"
-        [checked]="classicMode"
-        (change)="classicMode = !classicMode">
-        {{classicMode ? 'Classic' : 'Gif'}}
+        <mat-slide-toggle color="primary" [checked]="classicMode" (change)="classicMode = !classicMode">
+            {{classicMode ? 'Classic' : 'Gif'}}
         </mat-slide-toggle>
     </div>
-    <div class="pokemons-container"  *ngIf="!isLoading">
-        
-        <div class="pokemon" *ngFor="let pokemon of pokemonsList | paginate: { itemsPerPage: 20, currentPage: p }">
-            <img 
-                [src]="pokemon.sprites.front_default" 
-                alt="{{pokemon.species.name ?? 'sin nombre'}}"
-                (click)="openCard(pokemon)"
-            >
-            <div class="circule"></div>
-            <p>{{pokemon.species.name}}</p>
+    <div class="pokemons-container" *ngIf="!isLoading">
+        <div class="pokemon-card" *ngFor="let pokemon of pokemonsList | paginate: { itemsPerPage: 20, currentPage: p }"
+            [attr.type]="pokemon.types[0].type.name">
+            <div class="card__img">
+                <img *ngIf="classicMode" [src]="pokemon.sprites.front_default" [alt]="pokemon.name">
+                <img *ngIf="!classicMode" src="https://projectpokemon.org/images/normal-sprite/{{pokemon.name}}.gif">
+            </div>
+            <div class="circule">
+                <p>ID: {{ pokemon.id }}</p>
+            </div>
+            <p>Nombre: {{ pokemon.species.name }}</p>
+            <div class="pokemon-type">
+                <p>Tipo: {{ pokemon.types[0].type.name }}</p>
+            </div>
+            <div class="evolutions">
+                <p>Evoluciones:</p>
+                <ul>
+                    <li *ngFor="let evolution of pokemon.evolutions">
+                        {{ evolution.name }}
+                    </li>
+                </ul>
+            </div>
         </div>
-        
     </div>
 
+
     <div class="paginator" *ngIf="!isLoading">
-        <pagination-controls (pageChange)="p = $event"
-            previousLabel="Anterior"
-            nextLabel="Siguiente"
-            style="margin-top: 50px;"
-        ></pagination-controls>
+        <pagination-controls (pageChange)="p = $event" previousLabel="Anterior" nextLabel="Siguiente"
+            style="margin-top: 50px;"></pagination-controls>
     </div>
 </section>
