@@ -5,8 +5,8 @@ export const navbarData = [
         label: 'Mis Pokemons'
     },
     {
-        routeLink: '/calculations',
+        routeLink: '/cotizaciones',
         icon: "assets/icons/calculate.svg",
-        label: 'Información'
+        label: 'Cotizaciones'
     },
 ]

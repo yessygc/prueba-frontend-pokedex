@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PokeDexComponent } from './pages/pokedex/pokedex.component';
-// import { CalculationsComponent } from './pages/calculations/calculations.component';
+import { CotizacionesComponent } from './pages/cotizaciones/cotizaciones.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'pokedex', pathMatch: 'full' },
   { path: 'pokedex', component: PokeDexComponent, },
-  //{ path: 'calculations', component: CalculationsComponent, },
+  { path: 'cotizaciones', component: CotizacionesComponent, },
 ];
 
 @NgModule({

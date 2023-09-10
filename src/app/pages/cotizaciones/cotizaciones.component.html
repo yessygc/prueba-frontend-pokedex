@@ -1,0 +1,18 @@
+<div>
+    <h1>Arreglo Original:</h1>
+    <ul>
+      <li *ngFor="let item of arregloOriginal">
+        Aseguradora: {{ item.aseguradora }}, Nombre: {{ item.cotizacion.cliente.nombre }}
+      </li>
+    </ul>
+  </div>
+  
+  <div>
+    <h1>Nuevo Arreglo:</h1>
+    <ul>
+      <li *ngFor="let item of nuevoArreglo">
+        Aseguradora: {{ item.aseguradora }}, Nombre: {{ item.cotizacion.cliente.nombre }}
+      </li>
+    </ul>
+  </div>
+  

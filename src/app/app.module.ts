@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CommonModule } from '@angular/common';
 
-import { environment } from '../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { HttpClientModule } from '@angular/common/http';
@@ -20,6 +20,7 @@ import { LoaderComponent } from './components/loader/loader.component';
 import { BodyComponent } from './pages/body/body.component';
 import { PokeCardComponent } from './pages/pokedex/pokecard/pokecard.component';
 import { PokeDexComponent } from './pages/pokedex/pokedex.component';
+import { CotizacionesComponent } from './pages/cotizaciones/cotizaciones.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { PokeDexComponent } from './pages/pokedex/pokedex.component';
     BodyComponent,
     PokeCardComponent,
     PokeDexComponent,
+    CotizacionesComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +45,7 @@ import { PokeDexComponent } from './pages/pokedex/pokedex.component';
     NgxPaginationModule,
     MatTooltipModule,
     FormsModule,
+    CommonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
