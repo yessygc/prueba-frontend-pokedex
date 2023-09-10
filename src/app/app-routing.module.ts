@@ -4,9 +4,9 @@ import { PokeDexComponent } from './pages/pokedex/pokedex.component';
 // import { CalculationsComponent } from './pages/calculations/calculations.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'pokedex', pathMatch: 'full' },
-  { path: 'poke-dex', canActivate: [], component: PokeDexComponent, },
-  // { path: 'calculations', canActivate: [AuthGuard], component: CalculationsComponent, },
+  { path: '', redirectTo: 'poke-dex', pathMatch: 'full' },
+  { path: 'pokedex', component: PokeDexComponent, },
+  //{ path: 'calculations', component: CalculationsComponent, },
 ];
 
 @NgModule({
