@@ -12,6 +12,12 @@
             <input matInput type="text" [(ngModel)]="searchText" placeholder="Buscar por nombre o número" (input)="updateFilteredItems()" #input />
             <mat-icon matPrefix>search</mat-icon>
         </mat-form-field>
+        <mat-slide-toggle
+        color="primary"
+        [checked]="classicMode"
+        (change)="classicMode = !classicMode">
+        {{classicMode ? 'Classic' : 'Gif'}}
+        </mat-slide-toggle>
     </div>
     <div class="pokemons-container"  *ngIf="!isLoading">
         

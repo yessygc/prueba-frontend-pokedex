@@ -12,7 +12,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 import { SideNavComponent } from './components/sidenav/sidenav.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -44,8 +45,9 @@ import { CotizacionesComponent } from './pages/cotizaciones/cotizaciones.compone
     HttpClientModule,
     NgxPaginationModule,
     MatTooltipModule,
-    FormsModule,
+    FormsModule, ReactiveFormsModule,
     CommonModule,
+    MatSlideToggleModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

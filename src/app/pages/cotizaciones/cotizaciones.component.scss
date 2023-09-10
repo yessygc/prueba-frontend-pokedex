@@ -1,0 +1,30 @@
+section{
+    
+    .array-container-1{
+        width: 80%;
+        min-height: 100px;
+        max-height: max-content;
+        border: solid 8px rgb(156, 156, 156);
+        background-color: #5d7961;
+        border-radius: 5px;
+        margin: 0 auto;
+        padding: 10px;
+        @media(max-width: 1024px){
+            width: 100%;
+        }
+    }
+
+    .array-container-2{
+        width: 80%;
+        min-height: 100px;
+        max-height: max-content;
+        border: solid 8px rgb(156, 156, 156);
+        background-color: #5d7961;
+        border-radius: 5px;
+        margin: 0 auto;
+        padding: 10px;
+        @media(max-width: 1024px){
+            width: 100%;
+        }
+    }
+}

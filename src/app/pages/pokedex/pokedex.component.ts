@@ -12,6 +12,7 @@ import { lastValueFrom } from 'rxjs';
 })
 export class PokeDexComponent implements OnInit {
 
+  classicMode: boolean = true;
   public isLoading:boolean = false;
   public pokemonsList:any = [];
   public p: number = 1;
