@@ -12,7 +12,7 @@ export class PokemonService {
 
   constructor(private http: HttpClient) { }
 
-  async getAllPokemons(pokeIndex:number){
+  async getAllPokemons(pokeIndex:number | string){
     return await lastValueFrom(this.http.get(`${this.POKE_URL}/${pokeIndex}?limit=20&offset=0`));
   }
 

@@ -1,0 +1,91 @@
+section{
+    .dialog-container{
+        width: 80%;
+        min-height: 100px;
+        max-height: max-content;
+        border: solid 8px rgb(156, 156, 156);
+        background-color: #5d7961;
+        border-radius: 5px;
+        margin: 0 auto;
+        padding: 10px;
+        @media(max-width: 1024px){
+            width: 100%;
+        }
+    }
+    .pokemons-container{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 25px;
+        margin-top: 50px;
+
+        .pokemon{
+            display: flex;  
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            cursor: pointer;
+            img{
+                width: 142px;
+            }
+            img:hover{
+                scale: 1.3;
+            }
+            .circule{
+                position: absolute;
+                width: 70%;
+                height: 25px;
+                background-color: rgba(0, 0, 0, 0.050);
+                -moz-border-radius: 50%;
+                -webkit-border-radius: 50%;
+                border-radius: 50%;
+                bottom: 39px;
+                z-index: -2;
+            }
+            p{
+                text-transform: uppercase;
+                margin-top: 6px;
+                font-family: "Pixeled", sans-serif;
+                font-size: 10px;
+            }
+        }
+    }
+
+    .paginator{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    ::ng-deep .type-text-container > div{
+        color: #85b45f !important;
+        display: flex;
+        h1{
+            font-family: "Pixeled", sans-serif !important;
+            font-size: 15px;
+            text-transform: uppercase;
+        }
+    }
+
+    ::ng-deep .ngx-pagination .current{
+        background-color: var(--secondary-color) !important ;
+    }
+
+    //Buscador
+    .search {
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        background: #ffffff;
+        border-radius: 8px;
+        align-items: center;
+        width: 80%;
+        margin: 0 auto;
+        margin-top: 40px;
+        mat-form-field {
+            width: 97%;
+        }
+    }
+}

@@ -1,5 +1,5 @@
 export const environment = {
     production: true,
-    API_URL: ' https://pokeapi.co/docs/v2',
+    API_URL: 'https://pokeapi.co/api/v2',
   };
   

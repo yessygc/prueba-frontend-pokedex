@@ -9,7 +9,7 @@
     </div>
     <div class="search" *ngIf="!isLoading">
         <mat-form-field class="searcher-input">
-            <input matInput type="text" [(ngModel)]="searchText" placeholder="Buscar por nombre" (input)="updateFilteredItems()" #input />
+            <input matInput type="text" [(ngModel)]="searchText" placeholder="Buscar por nombre o número" (input)="updateFilteredItems()" #input />
             <mat-icon matPrefix>search</mat-icon>
         </mat-form-field>
     </div>
