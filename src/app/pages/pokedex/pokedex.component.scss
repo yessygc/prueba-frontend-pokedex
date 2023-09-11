@@ -28,7 +28,7 @@ section {
             justify-content: space-between;
             padding-left: 20px;
             border-radius: 20px;
-            height: 300px;
+            height: 350px;
             overflow: hidden;
             flex-direction: column;
             align-items: center;
@@ -61,6 +61,15 @@ section {
                 font-family: "Pixeled", sans-serif;
                 font-size: 10px;
             }
+
+            .bg-color-grass-light {
+                background-color: green;
+              }
+              
+              .bg-color-fire-light {
+                background-color: red;
+              }
+              
         }
     }
 
@@ -100,13 +109,5 @@ section {
         mat-form-field {
             width: 97%;
         }
-    }
-
-    .grass-type {
-        background-color: green;
-    }
-
-    .fire-type {
-        background-color: red;
     }
 }

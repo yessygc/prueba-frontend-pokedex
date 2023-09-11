@@ -19,6 +19,31 @@ export class PokeDexComponent implements OnInit {
   public searchText = '';
   public tempPokeList = [...this.pokemonsList];
 
+  favorites: any[] = []; // Lista de Pokémon favoritos
+
+  toggleFavorite(pokemon: any): void {
+    if (this.isFavorite(pokemon)) {
+      this.removeFromFavorites(pokemon);
+    } else {
+      this.addToFavorites(pokemon);
+    }
+  }
+
+  addToFavorites(pokemon: any): void {
+    this.favorites.push(pokemon);
+  }
+
+  removeFromFavorites(pokemon: any): void {
+    const index = this.favorites.findIndex((p) => p.id === pokemon.id);
+    if (index !== -1) {
+      this.favorites.splice(index, 1);
+    }
+  }
+
+  isFavorite(pokemon: any): boolean {
+    return this.favorites.some((p) => p.id === pokemon.id);
+  }
+
   onClassicModeChange(): void {
 
   }
@@ -79,8 +104,12 @@ export class PokeDexComponent implements OnInit {
     });
   }
 
-  getPrincipalType(list: any[]) {
-    return list.filter(x => x.slot === 1)[0]?.type.name;
+  getPrincipalType(types: any[]): string {
+    if (types && types.length > 0) {
+      return types[0].type.name;
+    }
+    return 'default';
   }
+  
 
 }  
